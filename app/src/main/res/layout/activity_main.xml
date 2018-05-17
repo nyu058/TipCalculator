@@ -10,38 +10,49 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="53dp"
         android:ems="10"
         android:hint="Bill amount"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="53dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="181dp"
-        android:layout_height="83dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="152dp"
         android:text="Submit"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
         android:ems="10"
         android:hint="Number of People"
         android:inputType="number"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="124dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="41dp"
         android:ems="10"
         android:hint="Tip Percentage"
         android:inputType="number"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="189dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
 </android.support.constraint.ConstraintLayout>
