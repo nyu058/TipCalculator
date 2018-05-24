@@ -9,10 +9,11 @@ import android.widget.RadioButton;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 
 public class Suggestion extends AppCompatActivity implements OnClickListener {
     Button cool;
-    RadioGroup rg;
+   RatingBar rtb;
     double a;
     int n;
     @Override
@@ -20,8 +21,8 @@ public class Suggestion extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestion);
         cool = (Button) findViewById(R.id.coolButton);
-        rg = (RadioGroup) findViewById(R.id.rg);
-        RadioGroup rg = (RadioGroup) findViewById(R.id.rg);
+        rtb = (RatingBar) findViewById(R.id.ratingBar);
+
         Intent intent = getIntent();
         Bundle bd = intent.getExtras();
         a = bd.getDouble("amount2");
@@ -46,8 +47,8 @@ public class Suggestion extends AppCompatActivity implements OnClickListener {
         startActivity(new_intent);
     }
     public double getPercent(){
-        RadioButton ratingbtn = (RadioButton) findViewById(rg.getCheckedRadioButtonId());
-        double rating = Integer.parseInt(ratingbtn.getText().toString());
+
+        double rating = rtb.getRating();
         double percent = (10+(rating*2))/100;
         return percent;
     }
