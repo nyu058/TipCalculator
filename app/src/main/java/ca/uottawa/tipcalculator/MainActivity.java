@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuInflater;
 import android.view.View.OnClickListener;
 import android.widget.*;
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -23,6 +26,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         submit.setOnClickListener(this);
         suggest.setOnClickListener(this);
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+
+        inflater.inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent3 = new Intent(this, SettingsActivity.class);
+        this.startActivity(intent3);
+        return true;
     }
     @Override
     public void onClick(View v) {

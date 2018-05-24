@@ -41,10 +41,18 @@ public class SettingsActivity extends AppCompatActivity implements OnClickListen
 
     @Override
     public void onClick(View view) {
-        if(validateInput()){
-            //这里要存一下editText input的值
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+        if(view.getId()==R.id.confirmButton) {
+
+            if (validateInput()) {
+                //这里要存一下editText input的值
+                Intent intent = new Intent(this, MainActivity.class);
+                Bundle bd = new Bundle();
+                bd.putString("percent",defaultTipPercentageEditText.getText().toString());
+                intent.putExtras(bd);
+                startActivity(intent);
+            }
+        }else if (view.getId() ==R.id.resetButton){
+            //todo
         }
     }
 
