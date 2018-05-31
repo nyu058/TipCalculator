@@ -2,9 +2,9 @@
     <string name="action_settings">Settings</string>
     <string name="app_name">Tip Calculator</string>
     <string-array name="entries">
-        <item> Dollar</item>
-        <item> Euro </item>
-        <item> Pound </item>
+        <item>Dollar</item>
+        <item>Euro</item>
+        <item>Pound</item>
     </string-array>
 
 </resources>

@@ -1,6 +1,8 @@
 package ca.uottawa.tipcalculator;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ public class Suggestion extends AppCompatActivity implements OnClickListener {
     Button cool;
    RatingBar rtb;
     double a;
+
     int n;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class Suggestion extends AppCompatActivity implements OnClickListener {
         Intent intent = getIntent();
         Bundle bd = intent.getExtras();
         a = bd.getDouble("amount2");
+
         n = bd.getInt("n2");
         cool.setOnClickListener(this);
     }
@@ -49,7 +53,8 @@ public class Suggestion extends AppCompatActivity implements OnClickListener {
     public double getPercent(){
 
         double rating = rtb.getRating();
-        double percent = (10+(rating*2))/100;
-        return percent;
+        return (10+(rating*2))/100;
+
     }
+
 }

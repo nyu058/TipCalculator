@@ -15,6 +15,7 @@ import android.widget.*;
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button submit, suggest;
     EditText amount, people, percent;
+    TextView currencySign;
     public static final String MSG_KEY="ca.uottawa.tipcalculator";
     SharedPreferences pref;
     @Override
@@ -28,11 +29,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         amount =(EditText) findViewById(R.id.bAmount);
         people = (EditText) findViewById(R.id.people);
         percent = (EditText) findViewById(R.id.percent);
+        currencySign = (TextView) findViewById(R.id.currencySignTextView);
+
+
         //percent.setText(setPercent);
         submit.setOnClickListener(this);
         suggest.setOnClickListener(this);
         pref = getApplicationContext().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         percent.setText(pref.getString("percentage",""));
+        currencySign.setText(setCurrencySign());
+
+
 
     }
     @Override
@@ -84,6 +91,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
         }
     }
+
+    public String setCurrencySign(){
+        System.out.println(pref.getString("currency","noneMain"));
+        String str = pref.getString("currency","");
+        if(str.equals("Pound")){
+            return "\u00a3";
+        }else if(str.equals("Euro")){
+            return "\u20ac";
+        }
+        else {
+            return "$";
+        }
+    }
+
     public boolean checkEmpty(EditText e){
         if(TextUtils.isEmpty(e.getText().toString())){
             e.setError("This field can not be blank");

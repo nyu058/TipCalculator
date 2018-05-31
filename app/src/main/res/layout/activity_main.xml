@@ -8,54 +8,79 @@
     tools:layout_editor_absoluteY="81dp">
 
 
-    <EditText
-        android:id="@+id/bAmount"
+    <TextView
+        android:id="@+id/numberOfPeopleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:text="Number of People"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/people"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billAmountTextView" />
+
+    <EditText
+        android:id="@+id/bAmount"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
         android:ems="10"
-        android:hint="Bill amount"
+        android:hint="Enter bill amount"
         android:inputType="numberDecimal"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/people"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/currencySignTextView" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="225dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="35dp"
+        android:layout_height="83dp"
+        android:layout_marginBottom="83dp"
+        android:layout_marginTop="85dp"
         android:text="Submit"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/suggest"
+        app:layout_constraintBottom_toBottomOf="@+id/suggest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/percent" />
+        app:layout_constraintTop_toTopOf="@+id/TipPercentageTextView" />
 
     <EditText
         android:id="@+id/people"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginTop="35dp"
         android:ems="10"
-        android:hint="Number of People"
+        android:hint="Enter Number of People"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/percent"
-        app:layout_constraintStart_toStartOf="@+id/bAmount"
-        app:layout_constraintTop_toBottomOf="@+id/bAmount" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/TipPercentageTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/numberOfPeopleTextView"
+        app:layout_constraintTop_toTopOf="@+id/billAmountTextView" />
 
     <EditText
         android:id="@+id/percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="43dp"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
-        android:hint="Tip Percentage"
+        android:hint="Enter Tip Percentage"
         android:inputType="number"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="@+id/people"
         app:layout_constraintStart_toStartOf="@+id/people"
-        app:layout_constraintTop_toBottomOf="@+id/people" />
+        app:layout_constraintTop_toBottomOf="@+id/currencySignTextView" />
 
     <Button
         android:id="@+id/suggest"
@@ -63,13 +88,59 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:layout_marginEnd="34dp"
-        android:layout_marginLeft="34dp"
         android:layout_marginRight="34dp"
-        android:layout_marginStart="34dp"
         android:text="Need a suggestion for tip percentage?"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/billAmountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="68dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="105dp"
+        android:text="Bill Amount"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/currencySignTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submit" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TipPercentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="Tip Percentage"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberOfPeopleTextView" />
+
+    <TextView
+        android:id="@+id/tipPercentageSignTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="%"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/percent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/currencySignTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:text="$"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bAmount"
+        app:layout_constraintEnd_toStartOf="@+id/bAmount"
+        app:layout_constraintStart_toEndOf="@+id/billAmountTextView" />
 
 </android.support.constraint.ConstraintLayout>

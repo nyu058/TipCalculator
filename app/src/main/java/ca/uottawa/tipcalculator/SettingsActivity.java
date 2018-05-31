@@ -19,7 +19,7 @@ public class SettingsActivity extends AppCompatActivity implements OnClickListen
     TextView defaultTipPercentageTextView;
     TextView currencyTextView;
     EditText defaultTipPercentageEditText;
-    TextView percentageSymbolTextView;
+
     Spinner currencySpinner;
     Button confirmButton;
     Button resetButton;
@@ -32,21 +32,22 @@ public class SettingsActivity extends AppCompatActivity implements OnClickListen
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        Spinner sp= (Spinner) findViewById(R.id.currencySpinner);
+        currencySpinner= (Spinner) findViewById(R.id.currencySpinner);
         ArrayAdapter<CharSequence> currencyAdapter = ArrayAdapter.createFromResource(this,R.array.entries, R.layout.spinner);
         currencyAdapter.setDropDownViewResource(R.layout.spinner);
-        sp.setAdapter(currencyAdapter);
+        currencySpinner.setAdapter(currencyAdapter);
         defaultTipPercentageTextView = (TextView) findViewById(R.id.defaultTipPercentageTextView);
         currencyTextView = (TextView) findViewById(R.id.currencyTextView);
         defaultTipPercentageEditText = (EditText) findViewById(R.id.defaultTipPercentageEditText);
-        percentageSymbolTextView = (TextView) findViewById(R.id.defaultTipPercentageTextView);
+
         confirmButton = (Button) findViewById(R.id.confirmButton);
         resetButton = (Button) findViewById(R.id.resetButton);
-        //两个button没有分别做intent,问题可能出在这里
+
         confirmButton.setOnClickListener(this);
         resetButton.setOnClickListener(this);
         pref = getApplicationContext().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         defaultTipPercentageEditText.setText(pref.getString("percentage", "15"));
+        currencySpinner.setSelection(setCurrencySpinner());
     }
 
     @Override
@@ -57,7 +58,10 @@ public class SettingsActivity extends AppCompatActivity implements OnClickListen
                 //这里要存一下editText input的值
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putString("percentage",defaultTipPercentageEditText.getText().toString());
-                editor.commit();
+                String str = currencySpinner.getSelectedItem().toString();
+                editor.putString("currency",str);
+                editor.apply();
+                System.out.println(pref.getString("currency","none"));
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }
@@ -75,9 +79,18 @@ public class SettingsActivity extends AppCompatActivity implements OnClickListen
     }
 
     public boolean validateInput(){
-        if(checkEmpty(defaultTipPercentageEditText)){
-            return false;
+
+        return !checkEmpty(defaultTipPercentageEditText);
+    }
+    public int setCurrencySpinner(){
+        String str = pref.getString("currency","");
+        if(str.equals("Pound")){
+            return 2;
+        }else if(str.equals("Euro")){
+            return 1;
         }
-        return true;
+        else {
+            return 0;
+        }
     }
 }
