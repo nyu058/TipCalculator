@@ -1,6 +1,8 @@
 package ca.uottawa.tipcalculator;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,17 +16,23 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button submit, suggest;
     EditText amount, people, percent;
     public static final String MSG_KEY="ca.uottawa.tipcalculator";
+    SharedPreferences pref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
         submit = (Button) findViewById(R.id.submit);
         suggest =(Button) findViewById(R.id.suggest);
         amount =(EditText) findViewById(R.id.bAmount);
         people = (EditText) findViewById(R.id.people);
         percent = (EditText) findViewById(R.id.percent);
+        //percent.setText(setPercent);
         submit.setOnClickListener(this);
         suggest.setOnClickListener(this);
+        pref = getApplicationContext().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        percent.setText(pref.getString("percentage",""));
 
     }
     @Override
@@ -35,8 +43,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         return super.onCreateOptionsMenu(menu);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent3 = new Intent(this, SettingsActivity.class);
-        this.startActivity(intent3);
+        if(item.getItemId()==R.id.action_settings) {
+            Intent intent3 = new Intent(this, SettingsActivity.class);
+            this.startActivity(intent3);
+            return true;
+        }
         return true;
     }
     @Override
