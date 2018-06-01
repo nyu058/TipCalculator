@@ -61,7 +61,7 @@ public class SettingsActivity extends AppCompatActivity implements OnClickListen
                 String str = currencySpinner.getSelectedItem().toString();
                 editor.putString("currency",str);
                 editor.apply();
-                System.out.println(pref.getString("currency","none"));
+
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }

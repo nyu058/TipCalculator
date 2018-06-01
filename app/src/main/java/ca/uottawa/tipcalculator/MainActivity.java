@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     public String setCurrencySign(){
-        System.out.println(pref.getString("currency","noneMain"));
+
         String str = pref.getString("currency","");
         if(str.equals("Pound")){
             return "\u00a3";
