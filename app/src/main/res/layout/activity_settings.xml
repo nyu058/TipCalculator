@@ -7,6 +7,7 @@
     tools:context=".SettingsActivity">
 
     <LinearLayout
+
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -15,6 +16,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="70dp"/>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,7 +39,7 @@
                 android:layout_weight="1"
 
                 android:text="Default Tip Percentage"
-                android:textColor="@android:color/black"
+                android:textColor="#ae032d"
                 android:textSize="22sp" />
 
             <EditText
@@ -42,7 +49,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName|number"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/PercentageSymbolTextView"
@@ -50,8 +57,8 @@
                 android:layout_height="wrap_content"
 
                 android:text="%"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textColor="@color/color_dark_pink"
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -69,40 +76,81 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Currency"
-                android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textColor="@color/color_dark_pink"
+                android:textSize="22sp" />
 
             <Spinner
                 android:id="@+id/currencySpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:entries="@array/entries" />
+                android:entries="@array/entries"
+                android:layout_gravity="center"
+                android:gravity="center"/>
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="70dp"/>
+
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
 
+            <View
+                android:layout_width="1dp"
+                android:layout_height="2sp"
+                android:layout_weight="1"/>
+
+
             <Button
                 android:id="@+id/confirmButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
-                android:text="Confirm"
-                android:textSize="24sp" />
+                android:text="CONFIRM"
+                android:textSize="22sp"
+                android:textColor="#ffffff"
+                android:background="@drawable/mybuttonbackground"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"/>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="1dp"/>
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/mybuttonbackground"
+                android:text="CANCEL"
+                android:textSize="22sp"
+                android:textColor="#ffffff"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"/>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="1dp"/>
 
             <Button
                 android:id="@+id/resetButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
-                android:text="Reset"
-                android:textSize="24sp" />
+                android:text="RESET"
+                android:textSize="22sp"
+                android:textColor="#ffffff"
+                android:background="@drawable/mybuttonbackground"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"/>
 
         </LinearLayout>
 

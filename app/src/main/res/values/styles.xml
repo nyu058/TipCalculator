@@ -1,11 +1,20 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#dbf9809e</item>
+        <item name="colorPrimaryDark">#ae032d</item>
+        <item name="colorAccent">#ffd9e3</item>
+        <item name="android:colorForeground">#ffd9e3</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">casual</item>
+        <item name="buttonStyle">@drawable/mybuttonbackground</item>
+        <item name="android:textStyle">bold</item>
     </style>
+
+    <!--<style name="DancingFont" parent="@android:style/TextAppearance.Small">-->
+        <!--<item name="android:fontFamily" tools:ignore="NewApi">@font/dancing_script_regular</item>-->
+    <!--</style>-->
 
 </resources>

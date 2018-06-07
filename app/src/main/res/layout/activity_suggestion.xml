@@ -26,9 +26,9 @@
             android:layout_height="wrap_content"
             android:text="Please rate your service: \n"
             android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textColor="@color/color_dark_pink"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -44,7 +44,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"
         android:text=" cool! "
-        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/mybuttonbackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

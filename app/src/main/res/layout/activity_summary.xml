@@ -7,6 +7,7 @@
     tools:context=".Summary"
     tools:layout_editor_absoluteY="89dp">
 
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
@@ -16,6 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,8 +36,8 @@
 
 
                 android:text="Bill amount: "
-                android:textColor="@android:color/background_dark"
-                android:textSize="28sp"
+                android:textColor="@color/color_dark_pink"
+                android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tAmount"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,15 +46,17 @@
                 android:id="@+id/bAmount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/color_dark_pink"
 
 
                 android:gravity="center_vertical|right"
                 android:text="TextView"
-                android:textSize="28sp"
+                android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="@+id/tipsPerPerson"
                 app:layout_constraintStart_toStartOf="@+id/tipsPerPerson"
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,8 +74,8 @@
 
                 android:layout_weight="1"
                 android:text="Tip amount: "
-                android:textColor="@android:color/background_dark"
-                android:textSize="30sp"
+                android:textColor="@color/color_dark_pink"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -81,8 +85,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical|right"
+                android:textColor="@color/color_dark_pink"
                 android:text="TextView"
-                android:textSize="28sp" />
+                android:textSize="22sp" />
 
         </LinearLayout>
 
@@ -102,8 +107,8 @@
 
                 android:layout_weight="1"
                 android:text="Total amount: "
-                android:textColor="@android:color/background_dark"
-                android:textSize="28sp"
+                android:textColor="@color/color_dark_pink"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -111,11 +116,12 @@
                 android:id="@+id/tAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/color_dark_pink"
 
                 android:layout_weight="1"
                 android:gravity="center_vertical|right"
                 android:text="TextView"
-                android:textSize="28sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="@+id/tips"
                 app:layout_constraintTop_toBottomOf="@+id/tips" />
         </LinearLayout>
@@ -137,8 +143,8 @@
 
                 android:layout_weight="1"
                 android:text="Tip per person:"
-                android:textColor="@android:color/background_dark"
-                android:textSize="28sp"
+                android:textColor="@color/color_dark_pink"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -146,11 +152,12 @@
                 android:id="@+id/tipsPerPerson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/color_dark_pink"
 
                 android:layout_weight="1"
                 android:gravity="center_vertical|right"
                 android:text="TextView"
-                android:textSize="28sp"
+                android:textSize="22sp"
                 app:layout_constraintBottom_toTopOf="@+id/textView6"
                 app:layout_constraintStart_toEndOf="@+id/textView6" />
         </LinearLayout>
@@ -170,8 +177,8 @@
 
                 android:layout_weight="1"
                 android:text="Each person pays:"
-                android:textColor="@android:color/background_dark"
-                android:textSize="24sp"
+                android:textColor="@color/color_dark_pink"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -179,14 +186,31 @@
                 android:id="@+id/eachPays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/color_dark_pink"
 
                 android:layout_weight="1"
                 android:gravity="center_vertical|right"
                 android:text="TextView"
-                android:textSize="28sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="@+id/tipsPerPerson"
                 app:layout_constraintTop_toBottomOf="@+id/tipsPerPerson" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="30dp"/>
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="60sp"
+            android:layout_height="35sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mybuttonbackground"
+            android:text="BACK"
+            android:textSize="22sp"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-condensed" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

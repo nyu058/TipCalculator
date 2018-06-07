@@ -21,7 +21,8 @@
         <activity android:name=".Summary"
             android:screenOrientation="portrait"/>
         <activity android:name=".SettingsActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:exported="true"/>
         <activity android:name=".Suggestion"
             android:screenOrientation="portrait"></activity>
     </application>

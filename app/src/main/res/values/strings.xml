@@ -7,4 +7,6 @@
         <item>Pound</item>
     </string-array>
 
+    <string name="underline"><u>Click here for a suggestion for tip percentage</u>.</string>
+
 </resources>

@@ -10,13 +10,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="384dp"
+        android:layout_height="511dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Bill Amount:"
-                android:textColor="@android:color/black"
+                android:textColor="@color/color_dark_pink"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -50,7 +49,7 @@
 
                     android:gravity="right"
                     android:text="$"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/color_dark_pink"
                     android:textSize="20sp" />
 
                 <EditText
@@ -62,6 +61,7 @@
                     android:ems="10"
                     android:hint="Enter bill amount"
                     android:inputType="numberDecimal"
+                    android:textColor="@color/color_dark_pink"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -78,12 +78,11 @@
 
             <TextView
                 android:id="@+id/numberOfPeopleTextView"
-                android:layout_width="match_parent"
+                android:layout_width="183dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Number of People:"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textColor="@color/color_dark_pink"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/people"
@@ -93,7 +92,9 @@
                 android:ems="10"
                 android:hint="Enter Number of People"
                 android:inputType="number"
-                android:textSize="14sp" />
+                android:textColor="@color/color_dark_pink"
+                android:textSize="14sp"
+                android:visibility="visible" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,11 +109,11 @@
 
             <TextView
                 android:id="@+id/TipPercentageTextView"
-                android:layout_width="match_parent"
+                android:layout_width="367dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Tip Percentage:"
-                android:textColor="@android:color/black"
+                android:textColor="@color/color_dark_pink"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -129,39 +130,51 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="Enter Tip Percentage"
-
                     android:inputType="number"
+
+                    android:textColor="@color/color_dark_pink"
                     android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tipPercentageSignTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-
                     android:gravity="left"
                     android:text="%"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/color_dark_pink"
                     android:textSize="20sp" />
             </LinearLayout>
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/submit"
-            android:layout_width="225dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
-            android:text="Submit"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/suggest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Need a suggestion for tip percentage?" />
+            android:background="#ffffff"
+            android:textSize="16sp"
+            android:text="@string/underline"
+            android:textColor="@color/color_dark_pink"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mybuttonbackground"
+            android:text="SUBMIT"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+
+
     </LinearLayout>
 
 
